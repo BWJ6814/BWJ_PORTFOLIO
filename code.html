@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>변운조 | 신입 개발자 포트폴리오</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;family=Noto+Sans+KR:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-container": "#0052cc",
+                        "surface-container-low": "#f2f4f6",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-background": "#191c1e",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#d8dadc",
+                        "primary-fixed": "#dae2ff",
+                        "on-surface": "#191c1e",
+                        "inverse-surface": "#2d3133",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-primary-fixed": "#001848",
+                        "outline": "#737685",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#aad8ff",
+                        "surface": "#f7f9fb",
+                        "surface-bright": "#f7f9fb",
+                        "surface-container": "#eceef0",
+                        "secondary-fixed-dim": "#b1c7f2",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#31476b",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#d6e3ff",
+                        "background": "#f7f9fb",
+                        "secondary": "#495f84",
+                        "on-tertiary-fixed": "#001e30",
+                        "surface-variant": "#e0e3e5",
+                        "surface-container-high": "#e6e8ea",
+                        "primary-fixed-dim": "#b2c5ff",
+                        "on-primary-container": "#c4d2ff",
+                        "on-tertiary-fixed-variant": "#004b70",
+                        "on-secondary-fixed": "#001b3d",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#c3c6d6",
+                        "tertiary-container": "#16608a",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#434654",
+                        "on-primary-fixed-variant": "#0040a2",
+                        "inverse-primary": "#b2c5ff",
+                        "tertiary-fixed-dim": "#90cdfd",
+                        "secondary-container": "#bcd2fe",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#cae6ff",
+                        "tertiary": "#00486b",
+                        "on-secondary-container": "#445a7f",
+                        "primary": "#003d9b",
+                        "surface-tint": "#0c56d0"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope", "Noto Sans KR", "sans-serif"],
+                        "body": ["Inter", "Noto Sans KR", "sans-serif"],
+                        "label": ["Inter", "Noto Sans KR", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                    keyframes: {
+                        subtleBounce: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-3px)' },
+                        }
+                    },
+                    animation: {
+                        'subtle-bounce': 'subtleBounce 2s ease-in-out infinite',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', 'Noto Sans KR', sans-serif; overflow: hidden; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .glass-header { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .tech-pill { @apply flex items-center justify-center px-1.5 py-1 bg-white text-[9px] font-bold text-slate-700 rounded border border-slate-200 shadow-sm transition-all hover:border-primary/30 hover:bg-slate-50; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-6 py-3 max-w-full mx-auto">
+<div class="flex items-center gap-4">
+<span class="text-lg font-extrabold text-slate-900 dark:text-slate-50 font-headline tracking-tight">변운조 | 신입 개발자</span>
+<div class="flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full border border-primary/20">
+<span class="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></span>
+<span class="text-[10px] font-bold text-primary tracking-wider uppercase">채용 가능</span>
+</div>
+</div>
+<div class="flex gap-6 items-center">
+<div class="flex items-center gap-2 text-primary font-bold border-b-2 border-primary px-1 cursor-pointer">
+<span class="material-symbols-outlined text-sm">person</span>
+<span class="text-sm">소개</span>
+</div>
+<div class="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-primary transition-colors px-1 cursor-pointer">
+<span class="material-symbols-outlined text-sm">work</span>
+<span class="text-sm">프로젝트</span>
+</div>
+<div class="flex items-center gap-4 ml-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:bg-slate-50 p-2 rounded-full transition-all">mail</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:bg-slate-50 p-2 rounded-full transition-all">account_circle</span>
+</div>
+</div>
+</div>
+<div class="bg-slate-100 dark:bg-slate-800 h-[1px] w-full"></div>
+</header>
+<main class="flex-1 flex overflow-hidden">
+<!-- SideNavBar / Left Profile Column -->
+<aside class="w-72 bg-slate-50 dark:bg-slate-950 border-r border-slate-200 dark:border-slate-800 flex flex-col h-full shrink-0">
+<div class="p-6 flex flex-col items-center text-center">
+<div class="w-36 h-36 rounded-xl overflow-hidden mb-4 shadow-lg bg-white p-1">
+<img alt="Profile photo of Byun Un-jo" class="w-full h-full object-cover object-top rounded-lg" src="https://lh3.googleusercontent.com/aida/ADBb0ui1-7JyGL9L84NGvuUuulEA90dslMM-O5lzBOBphL-AfO0Owm76niO8RBOn8RsnFPxQSQ9AG8QqVT3JHnuKMcCGijRQVTGeq0qF1NFYyULdmDpuYYy-9aDV-lHO2-qEYE-7P47nbhWydXDflF_6SyaSlFKc-Caw02zDhCZBQIylsc2lFCPOLgD3wFnwD2zXWdFNOaL68mQKXu_-qTZoqeXI5ScHy39A8BstepWodNVxACAK_pzwxGgH5JGRV9zYkVETRV1W4IOHKA"/>
+</div>
+<h1 class="text-xl font-black text-blue-800 dark:text-blue-300 font-headline mb-0.5">변운조</h1>
+<p class="text-blue-700/70 font-medium text-[11px] mb-4">Full-stack Developer</p>
+<div class="text-[11px] text-on-surface-variant leading-relaxed mb-6 px-2">
+                    석사 과정에서 다진 전공지식과 실전 웹 솔루션 구현 능력을 겸비한, 비즈니스 지향적 리더형 개발자입니다. 효율적인 시스템 설계와 사용자 중심의 인터페이스 구현에 가치를 둡니다.
+                </div>
+<div class="w-full space-y-2 text-left">
+<div class="flex items-center gap-3 p-2.5 bg-white rounded-lg shadow-sm border border-slate-100">
+<span class="material-symbols-outlined text-primary text-lg">mail</span>
+<span class="text-[10px] font-medium truncate">go6815@gmail.com</span>
+</div>
+<div class="flex items-center gap-3 p-2.5 bg-white rounded-lg shadow-sm border border-slate-100">
+<span class="material-symbols-outlined text-primary text-lg">link</span>
+<span class="text-[10px] font-medium">github.com/bwj6814</span>
+</div>
+</div>
+</div>
+<div class="mt-auto p-5 border-t border-slate-200 bg-surface-container-low">
+<h3 class="text-[9px] font-bold text-slate-400 tracking-widest uppercase mb-3">주요 경력 및 교육</h3>
+<div class="space-y-3">
+<div class="relative pl-3 border-l-2 border-primary/30">
+<p class="text-[10px] font-bold text-primary">2026.03 ~ 2026.05</p>
+<p class="text-[11px] font-medium leading-tight">휴먼AI교육센터 - 심화 프로젝트</p>
+</div>
+<div class="relative pl-3 border-l-2 border-primary/30">
+<p class="text-[10px] font-bold text-primary">2025.09 ~ 2026.03</p>
+<p class="text-[11px] font-medium leading-tight">휴먼AI교육센터 - 풀스택 과정</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="flex-1 bg-surface flex flex-col overflow-hidden">
+<div class="flex-1 overflow-y-auto no-scrollbar p-6 space-y-6">
+<!-- 핵심 역량 -->
+<section>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+<h2 class="text-base font-extrabold tracking-tight font-headline">핵심 역량</h2>
+</div>
+<div class="grid grid-cols-4 gap-3">
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm border border-transparent hover:border-primary/10">
+<div class="text-primary-container mb-2"><span class="material-symbols-outlined text-lg">layers</span></div>
+<h3 class="text-[10px] font-bold text-primary mb-1">[Spring/React/AI]</h3>
+<p class="text-[10px] text-on-surface-variant font-medium leading-tight">풀스택 개발 및 RAG 시스템 구축</p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm border border-transparent hover:border-primary/10">
+<div class="text-primary-container mb-2"><span class="material-symbols-outlined text-lg">database</span></div>
+<h3 class="text-[10px] font-bold text-primary mb-1">[Python/Java]</h3>
+<p class="text-[10px] text-on-surface-variant font-medium leading-tight">데이터 렌더링 최적화 및 파이프라인 설계</p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm border border-transparent hover:border-primary/10">
+<div class="text-primary-container mb-2"><span class="material-symbols-outlined text-lg">terminal</span></div>
+<h3 class="text-[10px] font-bold text-primary mb-1">[Git/CI/CD]</h3>
+<p class="text-[10px] text-on-surface-variant font-medium leading-tight">협업 워크플로우 표준화 및 배포 자동화</p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm border border-transparent hover:border-primary/10">
+<div class="text-primary-container mb-2"><span class="material-symbols-outlined text-lg">groups</span></div>
+<h3 class="text-[10px] font-bold text-primary mb-1">[PM]</h3>
+<p class="text-[10px] text-on-surface-variant font-medium leading-tight">효율적인 일정 관리 체계 프로젝트 완수</p>
+</div>
+</div>
+</section>
+<!-- 기술 스택 -->
+<section>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">terminal</span>
+<h2 class="text-base font-extrabold tracking-tight font-headline">기술 스택</h2>
+</div>
+<div class="grid grid-cols-5 gap-3">
+<!-- Frontend -->
+<div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="bg-slate-50 border-b border-slate-100 py-1.5 px-3">
+<h4 class="text-[9px] font-black text-slate-800 tracking-widest uppercase text-center">Frontend</h4>
+</div>
+<div class="p-3 grid grid-cols-2 gap-2 content-start">
+<div class="tech-pill">React</div>
+<div class="tech-pill">Vue.js</div>
+<div class="tech-pill">JSP</div>
+<div class="tech-pill">Axios</div>
+</div>
+</div>
+<!-- Backend -->
+<div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="bg-slate-50 border-b border-slate-100 py-1.5 px-3">
+<h4 class="text-[9px] font-black text-slate-800 tracking-widest uppercase text-center">Backend</h4>
+</div>
+<div class="p-3 grid grid-cols-2 gap-2 content-start">
+<div class="tech-pill">Java</div>
+<div class="tech-pill">Spring</div>
+<div class="tech-pill">FastAPI</div>
+<div class="tech-pill">Node.js</div>
+</div>
+</div>
+<!-- Database -->
+<div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="bg-slate-50 border-b border-slate-100 py-1.5 px-3">
+<h4 class="text-[9px] font-black text-slate-800 tracking-widest uppercase text-center">Database</h4>
+</div>
+<div class="p-3 grid grid-cols-2 gap-2 content-start">
+<div class="tech-pill">MySQL</div>
+<div class="tech-pill">MariaDB</div>
+<div class="tech-pill col-span-2">Amazon S3</div>
+</div>
+</div>
+<!-- AI / LLM -->
+<div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="bg-slate-50 border-b border-slate-100 py-1.5 px-3">
+<h4 class="text-[9px] font-black text-slate-800 tracking-widest uppercase text-center">AI / LLM</h4>
+</div>
+<div class="p-3 grid grid-cols-2 gap-2 content-start">
+<div class="tech-pill">LangChain</div>
+<div class="tech-pill">OpenCV</div>
+<div class="tech-pill">LLM</div>
+</div>
+</div>
+<!-- DevOps & Collab -->
+<div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="bg-slate-50 border-b border-slate-100 py-1.5 px-3">
+<h4 class="text-[9px] font-black text-slate-800 tracking-widest uppercase text-center">DevOps &amp; Collab</h4>
+</div>
+<div class="p-3 grid grid-cols-2 gap-2 content-start">
+<div class="tech-pill col-span-2">GitHub Actions</div>
+<div class="tech-pill">EC2</div>
+<div class="tech-pill">Notion</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 핵심 프로젝트 -->
+<section>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<h2 class="text-base font-extrabold tracking-tight font-headline">핵심 프로젝트</h2>
+</div>
+<div class="grid grid-cols-3 gap-5">
+<!-- LawPartner -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col group border border-transparent hover:border-primary/20 transition-all hover:shadow-lg hover:-translate-y-1">
+<div class="h-32 bg-slate-200 overflow-hidden relative">
+<img alt="LawPartner Project Visualization" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/ADBb0ujaN9dxRix-AQmtFFPOu2vB5R01m3uIqkTuRML0Y8_XPes23_OglVbegurzH1vu2lNMSv0zhydGcAV6JypUd-7-8A2SS-Xr8b1NZbX1qWnKbmGd7dH8MNdkjkD7madMvlWfsJChfu4cKx8T4ClawThEkFffXLbswKYxfRZN5qjmK-Bwlhgrp3BXkjsQ-Vvciio-ohcHThGHN4PLMB1eqQei3a0Tqnr_EdHzmtIBF1wXtHIx1Jc510l7uNFMKb2h07Ua5Sc-5Y2FkQ"/>
+<div class="absolute top-2 right-2 px-1.5 py-0.5 bg-primary text-[8px] font-bold text-white rounded">팀 프로젝트 (5인)</div>
+</div>
+<div class="p-4 flex-1 flex flex-col">
+<div class="flex gap-1.5 mb-2">
+<span class="text-[8px] font-bold text-blue-600 bg-blue-50 px-1.5 py-0.5 rounded-full border border-blue-100">#PM</span>
+<span class="text-[8px] font-bold text-blue-600 bg-blue-50 px-1.5 py-0.5 rounded-full border border-blue-100">#Fullstack</span>
+<span class="text-[8px] font-bold text-blue-600 bg-blue-50 px-1.5 py-0.5 rounded-full border border-blue-100">#AI</span>
+</div>
+<h3 class="text-sm font-bold text-on-surface mb-1">LawPartner</h3>
+<p class="text-[10px] text-on-surface-variant mb-4 leading-normal line-clamp-2">법률 상담 보조 및 RAG 기반 판례 검색 시스템 구축. 대규모 데이터 처리 및 검색 엔진 최적화 담당.</p>
+<button class="mt-auto w-full py-2 bg-gradient-to-r from-primary to-primary-container text-white text-[10px] font-bold rounded-lg transition-all flex items-center justify-center gap-2 shadow-sm group-hover:shadow-md group-hover:bg-blue-700">
+<span>포트폴리오 보기</span>
+<span class="material-symbols-outlined text-[10px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- MEDNEURO -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col group border border-transparent hover:border-primary/20 transition-all hover:shadow-lg hover:-translate-y-1">
+<div class="h-32 bg-slate-200 overflow-hidden relative">
+<img alt="MEDNEURO Project Visualization" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/ADBb0ujet3i3JYVWjMerBLKe1BmPiSPx8r2rEji-G2IqGUuorTZpPekPmes08rUGSyYD2v-Ur9SVIA1QkwWJXcerEoirkD5t2Dov1dGjqd8MvwWC0UcHdx3SePydzj1B-4KZPjKe3B_lbmM06WLZCjD9udeYb4j5C2YS1iKUz7yyulR3IZbbDiiJh74EttD53o2F-5xQs6zu3GO2w4MlXLR7O8NQqEXGiLw-It5zUrmEaKMB6dZuMmKdF8X1LQRon34v9vBr8y9FIkX_SA"/>
+<div class="absolute top-2 right-2 px-1.5 py-0.5 bg-primary text-[8px] font-bold text-white rounded">팀 프로젝트 (3인)</div>
+</div>
+<div class="p-4 flex-1 flex flex-col">
+<div class="flex gap-1.5 mb-2">
+<span class="text-[8px] font-bold text-blue-600 bg-blue-50 px-1.5 py-0.5 rounded-full border border-blue-100">#Backend</span>
+<span class="text-[8px] font-bold text-blue-600 bg-blue-50 px-1.5 py-0.5 rounded-full border border-blue-100">#Data</span>
+</div>
+<h3 class="text-sm font-bold text-on-surface mb-1">MEDNEURO</h3>
+<p class="text-[10px] text-on-surface-variant mb-4 leading-normal line-clamp-2">뇌 신경 데이터 시각화 및 분석 파이프라인 설계. 대용량 바이오 데이터 렌더링 성능 40% 향상.</p>
+<button class="mt-auto w-full py-2 bg-gradient-to-r from-primary to-primary-container text-white text-[10px] font-bold rounded-lg transition-all flex items-center justify-center gap-2 shadow-sm group-hover:shadow-md group-hover:bg-blue-700">
+<span>포트폴리오 보기</span>
+<span class="material-symbols-outlined text-[10px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- SafeGuard -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col group border border-transparent hover:border-primary/20 transition-all hover:shadow-lg hover:-translate-y-1">
+<div class="h-32 bg-slate-200 overflow-hidden relative">
+<img alt="SafeGuard Project Visualization" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/ADBb0uj4QJNc5nqc4MYMo6CajpDV6vvKmAv5BmzPoJWXouW-ecNcWkPl0b-jnipalS4EtbMj6mxz_kgsrAJpM68G2cnkHmX3HsC63XkfewslCE0lc4yBQYyr-_H5lM8ghAcA2BAV0Ye45GsfPTYDX5WyuzJ_oTzBfI0bnB5n3XIcg7-5epCWBjsJT9gcDMaAY0pYe_lycrc7cDcZmGGDfJbgJRy4sRq-vVTPNEJcDEcdZ_MmRqJH377jmMGt2-vK9z-4-BEjg38iirW8Aw"/>
+<div class="absolute top-2 right-2 px-1.5 py-0.5 bg-primary text-[8px] font-bold text-white rounded">개인 프로젝트</div>
+</div>
+<div class="p-4 flex-1 flex flex-col">
+<div class="flex gap-1.5 mb-2">
+<span class="text-[8px] font-bold text-blue-600 bg-blue-50 px-1.5 py-0.5 rounded-full border border-blue-100">#Security</span>
+<span class="text-[8px] font-bold text-blue-600 bg-blue-50 px-1.5 py-0.5 rounded-full border border-blue-100">#Automation</span>
+</div>
+<h3 class="text-sm font-bold text-on-surface mb-1">SafeGuard</h3>
+<p class="text-[10px] text-on-surface-variant mb-4 leading-normal line-clamp-2">지능형 관제 시스템용 자동 백업 도구 개발. GitHub Actions 활용 CI/CD 구축.</p>
+<button class="mt-auto w-full py-2 bg-gradient-to-r from-primary to-primary-container text-white text-[10px] font-bold rounded-lg transition-all flex items-center justify-center gap-2 shadow-sm group-hover:shadow-md group-hover:bg-blue-700">
+<span>포트폴리오 보기</span>
+<span class="material-symbols-outlined text-[10px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer -->
+<footer class="bg-white dark:bg-slate-950 flex justify-between items-center px-6 w-full py-3 border-t border-slate-200 dark:border-slate-800">
+<span class="font-['Inter'] text-[9px] tracking-wider uppercase text-slate-500">© 2024 BYUN UN-JO. ALL RIGHTS RESERVED.</span>
+<div class="flex gap-5">
+<a class="font-['Inter'] text-[9px] tracking-wider uppercase text-slate-500 hover:text-primary transition-colors" href="#">Github</a>
+<a class="font-['Inter'] text-[9px] tracking-wider uppercase text-slate-500 hover:text-primary transition-colors" href="#">LinkedIn</a>
+<a class="font-['Inter'] text-[9px] tracking-wider uppercase text-slate-500 hover:text-primary transition-colors" href="#">Blog</a>
+</div>
+</footer>
+</div>
+</main>
+</body></html>
