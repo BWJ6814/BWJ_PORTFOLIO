@@ -120,48 +120,127 @@
       padding: 0.125rem 0.4rem;
       white-space: nowrap;
     }
+
+    /* ----- 인쇄 / PDF 저장: 세로 용지에 맞춰 흐름 배치 · 여러 페이지로 분할 ----- */
+    @media print {
+      @page {
+        margin: 12mm;
+      }
+      html {
+        height: auto !important;
+      }
+      body {
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+        display: block !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      header {
+        position: relative !important;
+        break-inside: avoid;
+        page-break-after: avoid;
+      }
+      main {
+        display: flex !important;
+        flex-direction: column !important;
+        flex: none !important;
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+      }
+      main > aside {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        flex: none !important;
+        overflow: visible !important;
+        border-right: none !important;
+        border-bottom: 1px solid rgb(226 232 240) !important;
+        break-inside: avoid;
+      }
+      main > aside > div {
+        overflow: visible !important;
+        min-height: 0 !important;
+        flex: none !important;
+      }
+      main > aside > div.flex-1 {
+        flex: none !important;
+      }
+      main > div.flex-1 {
+        flex: none !important;
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+      }
+      main > div.flex-1 > div.flex-1 {
+        overflow: visible !important;
+        height: auto !important;
+        max-height: none !important;
+        flex: none !important;
+      }
+      /* 세로 폭에 맞게 그리드 완화 */
+      main .grid.grid-cols-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      }
+      main .grid.grid-cols-3 {
+        grid-template-columns: 1fr !important;
+      }
+      .line-clamp-2 {
+        -webkit-line-clamp: unset !important;
+        line-clamp: unset !important;
+        display: block !important;
+        overflow: visible !important;
+      }
+      .no-scrollbar {
+        overflow: visible !important;
+      }
+      footer {
+        break-inside: avoid;
+      }
+    }
   </style>
 </head>
 <body class="bg-surface text-on-surface h-screen flex flex-col">
   <header class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none docked full-width top-0 sticky z-50">
-    <div class="flex justify-between items-center w-full px-6 py-3 max-w-full mx-auto">
-      <div class="flex items-center gap-4">
-        <span class="text-lg font-extrabold text-slate-900 dark:text-slate-50 font-headline tracking-tight">변운조 | 신입 개발자</span>
-        <div class="flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full border border-primary/20">
+    <div class="flex flex-wrap items-center gap-x-4 gap-y-2 w-full px-4 sm:px-6 py-3 max-w-full mx-auto">
+      <div class="flex items-center gap-3 sm:gap-4 min-w-0 flex-wrap">
+        <span class="text-base sm:text-lg font-extrabold text-slate-900 dark:text-slate-50 font-headline tracking-tight truncate">변운조 | 신입 개발자</span>
+        <div class="flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full border border-primary/20 shrink-0">
           <span class="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></span>
           <span class="text-[10px] font-bold text-primary tracking-wider uppercase">채용 가능</span>
         </div>
       </div>
-      <div class="flex items-center">
+      <div class="flex items-center justify-end gap-3 sm:gap-5 flex-wrap text-[10px] sm:text-[11px] font-medium ml-auto shrink-0">
         <div class="flex items-center gap-2 text-primary font-bold border-b-2 border-primary px-1 cursor-pointer">
           <span class="material-symbols-outlined text-sm">person</span>
           <span class="text-sm">소개</span>
         </div>
+        <a href="mailto:go6815@gmail.com" class="inline-flex items-center gap-1.5 text-slate-600 dark:text-slate-300 hover:text-primary no-underline max-w-[min(100%,14rem)] sm:max-w-none">
+          <span class="material-symbols-outlined text-base shrink-0">mail</span>
+          <span class="truncate">go6815@gmail.com</span>
+        </a>
+        <a href="https://github.com/bwj6814" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-slate-600 dark:text-slate-300 hover:text-primary no-underline">
+          <span class="material-symbols-outlined text-base shrink-0">link</span>
+          <span class="whitespace-nowrap">github.com/bwj6814</span>
+        </a>
       </div>
     </div>
     <div class="bg-slate-100 dark:bg-slate-800 h-[1px] w-full"></div>
   </header>
-  <main class="flex-1 flex overflow-hidden">
+  <main class="flex-1 flex overflow-hidden min-h-0">
     <aside class="w-72 bg-slate-50 dark:bg-slate-950 border-r border-slate-200 dark:border-slate-800 flex flex-col h-full min-h-0 shrink-0">
       <div class="flex-1 min-h-0 overflow-y-auto no-scrollbar p-6 flex flex-col items-center text-center">
-        <div class="w-36 h-36 rounded-xl overflow-hidden mb-4 shadow-lg bg-white p-1">
-          <img alt="Profile photo of Byun Un-jo" class="w-full h-full object-cover object-top rounded-lg" src="./images/profile.png" width="144" height="144" decoding="async" />
+        <div class="w-36 h-36 rounded-xl overflow-hidden mb-4 shadow-lg bg-slate-100 dark:bg-slate-800/80 ring-1 ring-slate-200/80 dark:ring-slate-700 flex items-center justify-center p-1">
+          <img alt="Profile photo of Byun Un-jo" class="max-h-full max-w-full object-contain object-center rounded-lg" src="./images/profile.png" width="144" height="144" decoding="async" />
         </div>
         <h1 class="text-xl font-black text-blue-800 dark:text-blue-300 font-headline mb-0.5">변운조</h1>
         <p class="text-blue-700/70 font-medium text-[11px] mb-4">Full-stack Developer</p>
-        <div class="text-[11px] text-on-surface-variant leading-relaxed mb-6 px-2">
+        <div class="text-[11px] text-on-surface-variant leading-relaxed mb-4 px-2">
           석사 과정에서 다진 전공지식과 실전 웹 솔루션 구현 능력을 겸비한, 풀스택 개발자입니다
           기술 구현에 그치지 않고, 팀과 함께 완성도 높은 서비스를 만들어내는 협업형 개발자를 지향합니다.
-        </div>
-        <div class="w-full space-y-2 text-left">
-          <div class="flex items-center gap-3 p-2.5 bg-white rounded-lg shadow-sm border border-slate-100">
-            <span class="material-symbols-outlined text-primary text-lg">mail</span>
-            <span class="text-[10px] font-medium truncate">go6815@gmail.com</span>
-          </div>
-          <div class="flex items-center gap-3 p-2.5 bg-white rounded-lg shadow-sm border border-slate-100">
-            <span class="material-symbols-outlined text-primary text-lg">link</span>
-            <span class="text-[10px] font-medium">github.com/bwj6814</span>
-          </div>
         </div>
       </div>
       <div class="shrink-0 p-5 border-t border-slate-200 bg-surface-container-low">
@@ -174,6 +253,10 @@
           <a href="download/파이썬점유율_예측모델개발_머신러닝.pdf" target="_blank" rel="noopener noreferrer" class="flex items-start gap-2.5 rounded-lg p-2 -m-2 hover:bg-white/90 dark:hover:bg-slate-900/60 transition-colors no-underline group border border-transparent hover:border-primary/15">
             <span class="material-symbols-outlined text-primary text-[22px] shrink-0 leading-none inline-flex items-center justify-center w-7 h-7 mt-0.5 rounded-md bg-primary/5 group-hover:bg-primary/10 transition-colors" style="font-variation-settings: 'FILL' 0;">download</span>
             <span class="text-[10px] font-medium text-on-surface leading-relaxed flex-1 min-w-0 text-left whitespace-normal break-keep [word-break:keep-all]">글로벌 지표 기반 프로그래밍 언어 점유율 예측모델</span>
+          </a>
+          <a href="download/딥러닝산출물_변운조.pdf" target="_blank" rel="noopener noreferrer" class="flex items-start gap-2.5 rounded-lg p-2 -m-2 hover:bg-white/90 dark:hover:bg-slate-900/60 transition-colors no-underline group border border-transparent hover:border-primary/15">
+            <span class="material-symbols-outlined text-primary text-[22px] shrink-0 leading-none inline-flex items-center justify-center w-7 h-7 mt-0.5 rounded-md bg-primary/5 group-hover:bg-primary/10 transition-colors" style="font-variation-settings: 'FILL' 0;">download</span>
+            <span class="text-[10px] font-medium text-on-surface leading-relaxed flex-1 min-w-0 text-left whitespace-normal break-keep [word-break:keep-all]">산업폐기물 이미지 분석을 통한 다중 분류 모델 비교 및 YOLOv8 기반 객체 탐지 통합 파이프라인 개발</span>
           </a>
         </div>
       </div>
@@ -191,8 +274,8 @@
         </div>
       </div>
     </aside>
-    <div class="flex-1 bg-surface flex flex-col overflow-hidden">
-      <div class="flex-1 overflow-y-hidden no-scrollbar p-5 space-y-5">
+    <div class="flex-1 bg-surface flex flex-col overflow-hidden min-h-0">
+      <div class="flex-1 min-h-0 overflow-y-auto no-scrollbar p-5 space-y-5">
         <section>
           <div class="flex items-center gap-2 mb-4">
             <span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">verified</span>
@@ -200,7 +283,7 @@
           </div>
           <div class="grid grid-cols-4 gap-3">
             <div class="bg-surface-container-lowest p-3 rounded-xl shadow-sm border border-transparent hover:border-primary/10"><div class="text-primary-container mb-2"><span class="material-symbols-outlined text-lg">layers</span></div><h3 class="text-[11px] font-bold text-primary mb-1">[Spring/React/AI]</h3><p class="text-[11px] text-on-surface-variant font-medium leading-tight">풀스택 개발 및 RAG 시스템 구축 </p></div>
-            <div class="bg-surface-container-lowest p-3 rounded-xl shadow-sm border border-transparent hover:border-primary/10"><div class="text-primary-container mb-2"><span class="material-symbols-outlined text-lg">database</span></div><h3 class="text-[11px] font-bold text-primary mb-1">[Python/Java]</h3><p class="text-[11px] text-on-surface-variant font-medium leading-tight">데이터 가공 및 파이프라인 설계</p></div>
+            <div class="bg-surface-container-lowest p-3 rounded-xl shadow-sm border border-transparent hover:border-primary/10"><div class="text-primary-container mb-2"><span class="material-symbols-outlined text-lg">model_training</span></div><h3 class="text-[11px] font-bold text-primary mb-1">[ML/DL/LLM]</h3><p class="text-[11px] text-on-surface-variant font-medium leading-tight">분석 모델 및 파이프라인 설계 · 구현</p></div>
             <div class="bg-surface-container-lowest p-3 rounded-xl shadow-sm border border-transparent hover:border-primary/10"><div class="text-primary-container mb-2"><span class="material-symbols-outlined text-lg">terminal</span></div><h3 class="text-[11px] font-bold text-primary mb-1">[Git/CI/CD]</h3><p class="text-[11px] text-on-surface-variant font-medium leading-tight">협업 워크플로우 표준화 및 배포 자동화</p></div>
             <div class="bg-surface-container-lowest p-3 rounded-xl shadow-sm border border-transparent hover:border-primary/10"><div class="text-primary-container mb-2"><span class="material-symbols-outlined text-lg">groups</span></div><h3 class="text-[11px] font-bold text-primary mb-1">[PM]</h3><p class="text-[11px] text-on-surface-variant font-medium leading-tight">효율적인 일정 관리 체계 프로젝트 완수</p></div>
           </div>
@@ -282,8 +365,9 @@
           </div>
         </section>
       </div>
-      <footer class="bg-white dark:bg-slate-950 flex items-center px-6 w-full py-3 border-t border-slate-200 dark:border-slate-800">
+      <footer class="bg-white dark:bg-slate-950 flex flex-wrap items-center justify-between gap-2 px-6 w-full py-3 border-t border-slate-200 dark:border-slate-800">
         <span class="font-['Inter'] text-[9px] tracking-wider uppercase text-slate-500">© 2026 BYUN UN-JO. ALL RIGHTS RESERVED.</span>
+        <a href="./print-portfolio.html" class="font-['Inter'] text-[9px] text-slate-500 hover:text-primary no-underline">PDF·세로 보기</a>
       </footer>
     </div>
   </main>

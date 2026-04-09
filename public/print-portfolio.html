@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>변운조 | 포트폴리오 (세로·PDF용)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: Inter, "Noto Sans KR", system-ui, sans-serif; }
+    .font-headline { font-family: Manrope, "Noto Sans KR", sans-serif; }
+    .material-symbols-outlined { font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24; }
+    .tech-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.45rem;
+      font-size: 10px;
+      font-weight: 600;
+      color: rgb(51 65 85);
+      background: #fff;
+      border: 1px solid rgb(226 232 240);
+      border-radius: 0.35rem;
+    }
+    .project-tag {
+      font-size: 9px;
+      font-weight: 700;
+      color: rgb(37 99 235);
+      background: rgb(239 246 255);
+      border: 1px solid rgb(191 219 254);
+      border-radius: 9999px;
+      padding: 0.125rem 0.45rem;
+    }
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.125rem;
+      font-weight: 800;
+      color: rgb(15 23 42);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid rgb(0 61 155);
+    }
+    @page { margin: 14mm; }
+    @media print {
+      body { background: #fff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .print-break { break-inside: avoid; page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800 min-h-screen">
+  <main class="max-w-[210mm] mx-auto bg-white shadow-sm print:shadow-none px-6 py-8 md:px-10 md:py-10 space-y-10 print:max-w-none print:px-0 print:py-0">
+
+    <!-- 헤더 -->
+    <header class="print-break border-b border-slate-200 pb-6">
+      <div class="flex flex-wrap items-center gap-3 justify-between">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-widest text-blue-800/80">Portfolio</p>
+          <h1 class="font-headline text-2xl md:text-3xl font-extrabold text-slate-900 mt-1">변운조 | 신입 개발자</h1>
+        </div>
+        <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-[11px] font-bold text-blue-800">
+          <span class="w-2 h-2 rounded-full bg-blue-600"></span>
+          채용 가능
+        </span>
+      </div>
+      <div class="mt-4 flex flex-wrap items-center justify-end gap-x-6 gap-y-2 text-sm w-full">
+        <p class="flex items-center gap-2 text-blue-900 font-semibold m-0">
+          <span class="material-symbols-outlined text-lg text-blue-700">person</span>
+          소개
+        </p>
+        <a href="mailto:go6815@gmail.com" class="inline-flex items-center gap-2 text-slate-700 font-medium no-underline hover:text-blue-800">
+          <span class="material-symbols-outlined text-blue-700">mail</span>
+          go6815@gmail.com
+        </a>
+        <a href="https://github.com/bwj6814" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-slate-700 font-medium no-underline hover:text-blue-800">
+          <span class="material-symbols-outlined text-blue-700">link</span>
+          github.com/bwj6814
+        </a>
+      </div>
+    </header>
+
+    <!-- 프로필 -->
+    <section class="print-break space-y-4">
+      <h2 class="section-title font-headline">
+        <span class="material-symbols-outlined text-blue-700 text-2xl" style="font-variation-settings: 'FILL' 1;">badge</span>
+        프로필
+      </h2>
+      <div class="flex flex-col sm:flex-row gap-6 items-start">
+        <div class="shrink-0 mx-auto sm:mx-0 w-40 h-40 rounded-xl overflow-hidden border border-slate-200 shadow-md bg-slate-100 flex items-center justify-center p-1">
+          <img src="./images/profile.png" alt="프로필 사진" class="max-h-full max-w-full object-contain object-center" width="160" height="160" />
+        </div>
+        <div class="flex-1 min-w-0 space-y-3 text-left">
+          <div>
+            <p class="text-2xl font-black text-blue-900 font-headline">변운조</p>
+            <p class="text-sm text-blue-800/80 font-medium mt-0.5">Full-stack Developer</p>
+          </div>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            석사 과정에서 다진 전공지식과 실전 웹 솔루션 구현 능력을 겸비한, 풀스택 개발자입니다
+            기술 구현에 그치지 않고, 팀과 함께 완성도 높은 서비스를 만들어내는 협업형 개발자를 지향합니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 핵심 역량 -->
+    <section class="print-break space-y-4">
+      <h2 class="section-title font-headline">
+        <span class="material-symbols-outlined text-blue-700 text-2xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+        핵심 역량
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div class="p-4 rounded-xl bg-white border border-slate-100 shadow-sm">
+          <span class="material-symbols-outlined text-blue-800 mb-2">layers</span>
+          <h3 class="text-sm font-bold text-blue-900 mb-1">[Spring/React/AI]</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">풀스택 개발 및 RAG 시스템 구축</p>
+        </div>
+        <div class="p-4 rounded-xl bg-white border border-slate-100 shadow-sm">
+          <span class="material-symbols-outlined text-blue-800 mb-2">model_training</span>
+          <h3 class="text-sm font-bold text-blue-900 mb-1">[ML/DL/LLM]</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">분석 모델 및 파이프라인 설계 · 구현</p>
+        </div>
+        <div class="p-4 rounded-xl bg-white border border-slate-100 shadow-sm">
+          <span class="material-symbols-outlined text-blue-800 mb-2">terminal</span>
+          <h3 class="text-sm font-bold text-blue-900 mb-1">[Git/CI/CD]</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">협업 워크플로우 표준화 및 배포 자동화</p>
+        </div>
+        <div class="p-4 rounded-xl bg-white border border-slate-100 shadow-sm">
+          <span class="material-symbols-outlined text-blue-800 mb-2">groups</span>
+          <h3 class="text-sm font-bold text-blue-900 mb-1">[PM]</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">효율적인 일정 관리 체계 프로젝트 완수</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 기술 스택 -->
+    <section class="print-break space-y-4">
+      <h2 class="section-title font-headline">
+        <span class="material-symbols-outlined text-blue-700 text-2xl" style="font-variation-settings: 'FILL' 1;">terminal</span>
+        기술 스택
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div class="rounded-xl border border-slate-200 overflow-hidden bg-white">
+          <div class="bg-gradient-to-r from-blue-50 to-slate-50 px-3 py-2 border-b border-blue-100 text-center text-[10px] font-black uppercase tracking-wider text-slate-800">Language</div>
+          <div class="p-3 flex flex-wrap gap-2"><span class="tech-pill">Java</span><span class="tech-pill">Python</span><span class="tech-pill">C</span></div>
+        </div>
+        <div class="rounded-xl border border-slate-200 overflow-hidden bg-white">
+          <div class="bg-gradient-to-r from-blue-50 to-slate-50 px-3 py-2 border-b border-blue-100 text-center text-[10px] font-black uppercase tracking-wider text-slate-800">프론트엔드</div>
+          <div class="p-3 flex flex-wrap gap-2"><span class="tech-pill">React</span><span class="tech-pill">Vue.js</span><span class="tech-pill">JSP</span><span class="tech-pill">Axios</span><span class="tech-pill">Ajax</span></div>
+        </div>
+        <div class="rounded-xl border border-slate-200 overflow-hidden bg-white">
+          <div class="bg-gradient-to-r from-blue-50 to-slate-50 px-3 py-2 border-b border-blue-100 text-center text-[10px] font-black uppercase tracking-wider text-slate-800">백엔드</div>
+          <div class="p-3 flex flex-wrap gap-2"><span class="tech-pill">Spring Boot</span><span class="tech-pill">Node.js</span></div>
+        </div>
+        <div class="rounded-xl border border-slate-200 overflow-hidden bg-white">
+          <div class="bg-gradient-to-r from-blue-50 to-slate-50 px-3 py-2 border-b border-blue-100 text-center text-[10px] font-black uppercase tracking-wider text-slate-800">DB</div>
+          <div class="p-3 flex flex-wrap gap-2"><span class="tech-pill">OracleDB</span><span class="tech-pill">MySQL</span><span class="tech-pill">MariaDB</span><span class="tech-pill">MyBatis</span><span class="tech-pill">Spring Data JPA</span></div>
+        </div>
+        <div class="rounded-xl border border-slate-200 overflow-hidden bg-white">
+          <div class="bg-gradient-to-r from-blue-50 to-slate-50 px-3 py-2 border-b border-blue-100 text-center text-[10px] font-black uppercase tracking-wider text-slate-800">AI</div>
+          <div class="p-3 flex flex-wrap gap-2"><span class="tech-pill">LLM</span><span class="tech-pill">머신러닝</span><span class="tech-pill">LangChain</span><span class="tech-pill">OpenCV</span><span class="tech-pill">FastAPI</span><span class="tech-pill">Hadoop</span></div>
+        </div>
+        <div class="rounded-xl border border-slate-200 overflow-hidden bg-white">
+          <div class="bg-gradient-to-r from-blue-50 to-slate-50 px-3 py-2 border-b border-blue-100 text-center text-[10px] font-black uppercase tracking-wider text-slate-800">협업도구</div>
+          <div class="p-3 flex flex-wrap gap-2"><span class="tech-pill">GitHub</span><span class="tech-pill">GitHub Actions</span><span class="tech-pill">Amazon S3</span><span class="tech-pill">Amazon EC2</span><span class="tech-pill">Notion</span><span class="tech-pill">Discord</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 주요 경력 및 교육 -->
+    <section class="print-break space-y-3">
+      <h2 class="section-title font-headline">
+        <span class="material-symbols-outlined text-blue-700 text-2xl">school</span>
+        주요 경력 및 교육
+      </h2>
+      <div class="space-y-4 pl-1 border-l-2 border-blue-200">
+        <div class="pl-4">
+          <p class="text-xs font-bold text-blue-800">휴먼 AI교육센터 - 2026.03 ~ 2026.05</p>
+          <p class="text-sm text-slate-700 mt-1 leading-relaxed">AI 서비스 기반 웹 개발자 심화 프로젝트</p>
+        </div>
+        <div class="pl-4">
+          <p class="text-xs font-bold text-blue-800">휴먼 AI교육센터 - 2025.09 ~ 2026.03</p>
+          <p class="text-sm text-slate-700 mt-1 leading-relaxed">AI 및 빅데이터 기반 웹 풀스택 솔루션 개발자 양성 과정</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 심화 프로젝트 (PDF) -->
+    <section class="print-break space-y-3">
+      <h2 class="section-title font-headline">
+        <span class="material-symbols-outlined text-blue-700 text-2xl">folder_special</span>
+        심화 프로젝트
+      </h2>
+      <div class="space-y-3 rounded-xl border border-slate-200 bg-slate-50/80 p-4">
+        <a href="./download/머신러닝산출물_AI생성문서판독.pdf" target="_blank" rel="noopener noreferrer" class="flex items-start gap-3 p-3 rounded-lg bg-white border border-slate-100 hover:border-blue-200 transition-colors no-underline">
+          <span class="material-symbols-outlined text-blue-700 shrink-0">download</span>
+          <span class="text-sm font-medium text-slate-800 leading-snug">텍스트 기반 AI생성문서 판독 예측 모델</span>
+        </a>
+        <a href="./download/파이썬점유율_예측모델개발_머신러닝.pdf" target="_blank" rel="noopener noreferrer" class="flex items-start gap-3 p-3 rounded-lg bg-white border border-slate-100 hover:border-blue-200 transition-colors no-underline">
+          <span class="material-symbols-outlined text-blue-700 shrink-0">download</span>
+          <span class="text-sm font-medium text-slate-800 leading-snug">글로벌 지표 기반 프로그래밍 언어 점유율 예측모델</span>
+        </a>
+        <a href="./download/딥러닝산출물_변운조.pdf" target="_blank" rel="noopener noreferrer" class="flex items-start gap-3 p-3 rounded-lg bg-white border border-slate-100 hover:border-blue-200 transition-colors no-underline">
+          <span class="material-symbols-outlined text-blue-700 shrink-0">download</span>
+          <span class="text-sm font-medium text-slate-800 leading-snug">산업폐기물 이미지 분석을 통한 다중 분류 모델 비교 및 YOLOv8 기반 객체 탐지 통합 파이프라인 개발</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 핵심 프로젝트 -->
+    <section class="space-y-4">
+      <h2 class="section-title font-headline">
+        <span class="material-symbols-outlined text-blue-700 text-2xl" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+        핵심 프로젝트
+      </h2>
+      <div class="space-y-8">
+        <!-- LawPartner -->
+        <article class="print-break rounded-xl border border-slate-200 overflow-hidden bg-white shadow-sm">
+          <div class="aspect-[21/9] sm:h-44 bg-slate-200 relative">
+            <img src="./images/project-lawpartner.png" alt="LawPartner" class="w-full h-full object-cover" />
+            <span class="absolute top-2 right-2 px-2 py-0.5 bg-blue-800 text-white text-[10px] font-bold rounded">팀 프로젝트 (5인)</span>
+          </div>
+          <div class="p-4 space-y-3">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="project-tag">#PM</span><span class="project-tag">#풀스택</span><span class="project-tag">#CI/CD</span><span class="project-tag">#RAG</span><span class="project-tag">#AI</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">LawPartner</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">법률 상담 보조 및 RAG 기반 판례 검색 시스템 구축. 대규모 데이터 처리 및 검색 엔진 최적화 담당.</p>
+            <a href="https://bwj6814.github.io/lawpartner_portfolio/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-bold text-white bg-gradient-to-r from-blue-900 to-blue-700 px-4 py-2.5 rounded-lg no-underline">
+              포트폴리오 보기 <span class="material-symbols-outlined text-base">arrow_forward</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- MEDNEURO -->
+        <article class="print-break rounded-xl border border-slate-200 overflow-hidden bg-white shadow-sm">
+          <div class="aspect-[21/9] sm:h-44 bg-slate-200 relative">
+            <img src="./images/project-medneuro.png" alt="MEDNEURO" class="w-full h-full object-cover" />
+            <span class="absolute top-2 right-2 px-2 py-0.5 bg-blue-800 text-white text-[10px] font-bold rounded">팀 프로젝트 (3인)</span>
+          </div>
+          <div class="p-4 space-y-3">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="project-tag">#PM</span><span class="project-tag">#풀스택</span><span class="project-tag">#의료데이터</span><span class="project-tag">#영상처리</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">MEDNEURO</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">뇌 신경 데이터 시각화 및 분석 파이프라인 설계. 대용량 바이오 데이터 렌더링 성능 40% 향상.</p>
+            <a href="https://bwj6814.github.io/medneuro_portfolio/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-bold text-white bg-gradient-to-r from-blue-900 to-blue-700 px-4 py-2.5 rounded-lg no-underline">
+              포트폴리오 보기 <span class="material-symbols-outlined text-base">arrow_forward</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- SafeGuard -->
+        <article class="print-break rounded-xl border border-slate-200 overflow-hidden bg-white shadow-sm">
+          <div class="aspect-[21/9] sm:h-44 bg-slate-200 relative">
+            <img src="./images/project-safeguard.png" alt="SafeGuard" class="w-full h-full object-cover" />
+            <span class="absolute top-2 right-2 px-2 py-0.5 bg-blue-800 text-white text-[10px] font-bold rounded">개인 프로젝트</span>
+          </div>
+          <div class="p-4 space-y-3">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="project-tag">#풀스택</span><span class="project-tag">#YOLO</span><span class="project-tag">#실시간영상처리</span><span class="project-tag">#AI</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900">SafeGuard</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">지능형 관제 시스템용 자동 백업 도구 개발. GitHub Actions 활용 CI/CD 구축.</p>
+            <a href="https://bwj6814.github.io/SafeGuard_pf/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-bold text-white bg-gradient-to-r from-blue-900 to-blue-700 px-4 py-2.5 rounded-lg no-underline">
+              포트폴리오 보기 <span class="material-symbols-outlined text-base">arrow_forward</span>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer class="pt-6 border-t border-slate-200 text-center text-[10px] text-slate-500 tracking-wider uppercase print-break">
+      © 2026 BYUN UN-JO. ALL RIGHTS RESERVED.
+    </footer>
+  </main>
+</body>
+</html>

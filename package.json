@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "print:use": "node scripts/print-mode-on.mjs",
+    "print:restore": "node scripts/print-mode-off.mjs"
   },
   "devDependencies": {
     "vite": "latest"
